@@ -1,0 +1,87 @@
+{
+  "users": [
+    {
+      "id": "8df2",
+      "name": "123",
+      "region": "1231",
+      "password": "123"
+    },
+    {
+      "id": "7e7a",
+      "name": "Maksaim",
+      "role": "admin",
+      "region": "123",
+      "password": "1234"
+    },
+    {
+      "id": "51d8",
+      "name": "Mal",
+      "role": "user",
+      "region": "123",
+      "password": "123"
+    },
+    {
+      "id": "46ab",
+      "name": "Nan",
+      "region": "123",
+      "password": "12345"
+    },
+    {
+      "id": "b2bc",
+      "email": "MAk@gmail.com",
+      "name": "MAk",
+      "password": "1123"
+    },
+    {
+      "id": "8798",
+      "email": "123@gmail.com",
+      "name": "123",
+      "password": "123"
+    },
+    {
+      "id": "f443",
+      "name": "Ray",
+      "region": "awe",
+      "password": "123"
+    },
+    {
+      "id": "961f",
+      "name": "",
+      "region": "",
+      "password": ""
+    }
+  ],
+  "complaints": [
+    {
+      "id": 1,
+      "description": "Проблема с уличным освещением",
+      "photo": "https://via.placeholder.com/150",
+      "region": "Ош",
+      "userId": 2,
+      "supportCount": 5,
+      "status": "accepted"
+    },
+    {
+      "id": 2,
+      "description": "Ямы на дороге",
+      "photo": "https://via.placeholder.com/150",
+      "region": "Аламедин",
+      "userId": 3,
+      "supportCount": 2,
+      "status": "rejected"
+    },
+    {
+      "id": "f499",
+      "photo": "",
+      "description": "",
+      "region": "",
+      "supportCount": null
+    },
+    {
+      "id": "bcc1",
+      "photo": "",
+      "description": "",
+      "region": ""
+    }
+  ]
+}

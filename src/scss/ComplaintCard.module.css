@@ -1,0 +1,9 @@
+.complaint-card.accepted {
+    border: 2px solid green;
+    background-color: #e6ffe6;
+}
+
+.complaint-card.rejected {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}

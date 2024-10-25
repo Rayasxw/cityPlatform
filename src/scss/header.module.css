@@ -1,0 +1,16 @@
+.header {
+  padding: 20px 0 ;}
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__left {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+  }
+  .header__right {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+  }
