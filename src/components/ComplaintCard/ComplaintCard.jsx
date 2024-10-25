@@ -11,13 +11,14 @@ function ComplaintCard({ complaint , isAdmin}) {
     const handleSupport = async () => {
         if (!supported) {
             try {
-                await axios.patch(`/complaints/${complaint.id}`, { supportCount: complaint.supportCount + 1 });
+
+                await axios.patch(`/complaints/${complaint.id}`, { supportCount: supportCount + 1 });
+                setSupportCount(supportCount + 1);
                 setSupported(true);
             } catch (error) {
                 alert('Ошибка при поддержке жалобы');
             }
         }
-
     };
     const handleAccept = async () => {
         try {
@@ -40,15 +41,15 @@ function ComplaintCard({ complaint , isAdmin}) {
 
     return (
         <div className={`${styles.complaintCard} ${status}`}>
-            <img src={complaint.photo} alt="Complaint" />
-            <h3>{complaint.region}</h3>
-            <p>{complaint.description}</p>
-            <p>Поддержки: {supportCount}</p>
-            <button onClick={handleSupport} disabled={supported}>
+            <img className={styles.img} src={complaint.photo} alt="Complaint" />
+            <h3 className={styles.h3}>{complaint.region}</h3>
+            <p className={styles.p}>{complaint.description}</p>
+            <p className={styles.p}>Поддержки: {complaint.supportCount}</p>
+            <button className={styles.button} onClick={handleSupport} disabled={supported}>
                 {supported ? "Поддержано" : "Поддержать"}
             </button>
             {isAdmin && (
-                <div className="admin-buttons">
+                <div className={styles.adminButtons}>
                     <button onClick={handleAccept} style={{ backgroundColor: 'green' }}>Принять</button>
                     <button onClick={handleReject} style={{ backgroundColor: 'red' }}>Отклонить</button>
                 </div>

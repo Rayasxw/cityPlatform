@@ -20,10 +20,11 @@ function Header({user,setUser}) {
                     </div>
                     <div className={styles.header__right}>
                         {
-                            user.name ? <p>{user.name}</p> :
-                                <p onClick={() => setPopup(true)} className='header__login'>  Войти - Регистрация</p>
+
+                            user && user.name ? (<p>{user.name}</p>) :
+                                (<p  onClick={() => setPopup(true)} className='header__login'>  Войти - Регистрация</p>)
                         }
-                        <button onClick={() => setAddComplaintOpen(true)} type={'button'} className='header__btn'>Подать жалобу</button>
+                        <button  onClick={() => setAddComplaintOpen(true)} type={'button'} className={styles.button}>Подать жалобу</button>
                     </div>
                 </nav>
             </div>

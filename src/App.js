@@ -10,8 +10,7 @@ import Header from "./layout/Header/Header";
 import {useState} from "react";
 
 function App() {
-    const [user, setUser] = useState({
-    })
+    const [user, setUser] = useState({})
   return (
     <div className="App">
 

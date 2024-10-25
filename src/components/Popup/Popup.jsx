@@ -12,15 +12,26 @@ function Popup({popup, setPopup, user, setUser}) {
     }
     const signInHandler = (e) => {
 
+        axios.post('/login', {
+            name: e.target[0].value,
+            password: e.target[1].value
+        }).then(({data}) => {
+            e.target[0].value = ''
+            e.target[1].value = ''
+            setPopup(false)
+            localStorage.setItem('user', JSON.stringify((data.user)))
+
+        })
     }
     const signUpHandler = (e) => {
         axios.post( '/users ', {
             name: e.target[0].value,
             region: e.target[1].value,
             password: e.target[2].value
-        }).then((res) => {
+        }).then(({data}) => {
 
-            setUser(res.data.user)
+            setUser(data.user)
+            localStorage.setItem('user', JSON.stringify((data.user)))
             setPopup(false)
             e.target[0].value = ''
             e.target[1].value = ''
@@ -49,7 +60,7 @@ function Popup({popup, setPopup, user, setUser}) {
                         placeholder='Введите Район'/>
                     }
                     <input className={styles.input} type="password"/>
-                    <button className={styles.button} type={'submit'}>{status === 'signIn'? 'Войти' : 'Регистрация'}</button>
+                    <button  className={styles.button} type={'submit'}>{status === 'signIn'? 'Войти' : 'Регистрация'}</button>
                 </form>
             </div>
 
